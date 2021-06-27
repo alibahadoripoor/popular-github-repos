@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReposListViewController" customModule="popular_github_repos" customModuleProvider="target">
             <connections>
+                <outlet property="centerIndicator" destination="7D1-OW-yEt" id="Tyd-pp-e7S"/>
                 <outlet property="tableView" destination="Qct-Pn-9gM" id="nQX-xl-jqB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,21 +21,26 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qct-Pn-9gM">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qct-Pn-9gM">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="tmv-1b-hgf"/>
                         <outlet property="delegate" destination="-1" id="Iaa-E8-xrJ"/>
+                        <outlet property="prefetchDataSource" destination="-1" id="3NC-z3-oIq"/>
                     </connections>
                 </tableView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="7D1-OW-yEt">
+                    <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Qct-Pn-9gM" secondAttribute="bottom" id="60R-15-9mH"/>
+                <constraint firstItem="7D1-OW-yEt" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="BBU-wj-DpY"/>
                 <constraint firstItem="Qct-Pn-9gM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Foc-2e-US6"/>
                 <constraint firstItem="Qct-Pn-9gM" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Q63-vA-k1B"/>
+                <constraint firstItem="7D1-OW-yEt" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Qi4-QS-HxY"/>
                 <constraint firstItem="Qct-Pn-9gM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="T2n-nB-caQ"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="99.776785714285708"/>

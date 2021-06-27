@@ -12,14 +12,15 @@
 		50627CC62685C0C0006491CB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50627CC52685C0C0006491CB /* BaseViewController.swift */; };
 		50627CC92685E185006491CB /* RepositoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50627CC82685E185006491CB /* RepositoryResponse.swift */; };
 		50627CCB2685E486006491CB /* ReposListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50627CCA2685E486006491CB /* ReposListViewModel.swift */; };
-		50627CCD2685FB80006491CB /* GithubWebServiceEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50627CCC2685FB80006491CB /* GithubWebServiceEndpoint.swift */; };
-		50627CD02685FD0E006491CB /* GithubWebServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50627CCF2685FD0E006491CB /* GithubWebServiceError.swift */; };
+		50627CCD2685FB80006491CB /* GithubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50627CCC2685FB80006491CB /* GithubEndpoint.swift */; };
+		50627CD02685FD0E006491CB /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50627CCF2685FD0E006491CB /* HTTPError.swift */; };
 		50627CD22685FDEE006491CB /* GithubWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50627CD12685FDEE006491CB /* GithubWebService.swift */; };
 		50627CD42685FEBB006491CB /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50627CD32685FEBB006491CB /* DataService.swift */; };
 		50627CDA2686337E006491CB /* RepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50627CD82686337E006491CB /* RepoCell.swift */; };
 		50627CDB2686337E006491CB /* RepoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50627CD92686337E006491CB /* RepoCell.xib */; };
-		5080FCD226868D7300EF533C /* IBDesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5080FCD126868D7300EF533C /* IBDesignableView.swift */; };
 		5080FCD4268694C600EF533C /* RepoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5080FCD3268694C600EF533C /* RepoCellViewModel.swift */; };
+		5081B4832687C1F800923BA0 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5081B4822687C1F800923BA0 /* Result.swift */; };
+		5081B4852687C22100923BA0 /* HTTPURLResponse + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5081B4842687C22100923BA0 /* HTTPURLResponse + Extensions.swift */; };
 		50928E722685457A00B588FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50928E712685457A00B588FB /* AppDelegate.swift */; };
 		50928E742685457A00B588FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50928E732685457A00B588FB /* SceneDelegate.swift */; };
 		50928E7B2685457A00B588FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50928E7A2685457A00B588FB /* Assets.xcassets */; };
@@ -32,14 +33,15 @@
 		50627CC52685C0C0006491CB /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		50627CC82685E185006491CB /* RepositoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryResponse.swift; sourceTree = "<group>"; };
 		50627CCA2685E486006491CB /* ReposListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposListViewModel.swift; sourceTree = "<group>"; };
-		50627CCC2685FB80006491CB /* GithubWebServiceEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubWebServiceEndpoint.swift; sourceTree = "<group>"; };
-		50627CCF2685FD0E006491CB /* GithubWebServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubWebServiceError.swift; sourceTree = "<group>"; };
+		50627CCC2685FB80006491CB /* GithubEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubEndpoint.swift; sourceTree = "<group>"; };
+		50627CCF2685FD0E006491CB /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
 		50627CD12685FDEE006491CB /* GithubWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubWebService.swift; sourceTree = "<group>"; };
 		50627CD32685FEBB006491CB /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		50627CD82686337E006491CB /* RepoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCell.swift; sourceTree = "<group>"; };
 		50627CD92686337E006491CB /* RepoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoCell.xib; sourceTree = "<group>"; };
-		5080FCD126868D7300EF533C /* IBDesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignableView.swift; sourceTree = "<group>"; };
 		5080FCD3268694C600EF533C /* RepoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCellViewModel.swift; sourceTree = "<group>"; };
+		5081B4822687C1F800923BA0 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		5081B4842687C22100923BA0 /* HTTPURLResponse + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse + Extensions.swift"; sourceTree = "<group>"; };
 		50928E6E2685457A00B588FB /* popular-github-repos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "popular-github-repos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50928E712685457A00B588FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50928E732685457A00B588FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,8 +64,7 @@
 		50627CBA2685BC5F006491CB /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				50627CD726861059006491CB /* Error */,
-				50627CD62686104E006491CB /* Endpoint */,
+				5081B4812687C16A00923BA0 /* Helper */,
 				50627CD526860F8E006491CB /* Data Service */,
 				50627CBC2685BD10006491CB /* Web Service */,
 				50627CBB2685BCA5006491CB /* Response */,
@@ -122,7 +123,7 @@
 		50627CC72685C3AF006491CB /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				5080FCD5268698C600EF533C /* Custom Views */,
+				50627CC52685C0C0006491CB /* BaseViewController.swift */,
 				50627CBE2685BD3A006491CB /* Repos List  */,
 			);
 			path = Scene;
@@ -136,29 +137,15 @@
 			path = "Data Service";
 			sourceTree = "<group>";
 		};
-		50627CD62686104E006491CB /* Endpoint */ = {
+		5081B4812687C16A00923BA0 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				50627CCC2685FB80006491CB /* GithubWebServiceEndpoint.swift */,
+				50627CCC2685FB80006491CB /* GithubEndpoint.swift */,
+				50627CCF2685FD0E006491CB /* HTTPError.swift */,
+				5081B4822687C1F800923BA0 /* Result.swift */,
+				5081B4842687C22100923BA0 /* HTTPURLResponse + Extensions.swift */,
 			);
-			path = Endpoint;
-			sourceTree = "<group>";
-		};
-		50627CD726861059006491CB /* Error */ = {
-			isa = PBXGroup;
-			children = (
-				50627CCF2685FD0E006491CB /* GithubWebServiceError.swift */,
-			);
-			path = Error;
-			sourceTree = "<group>";
-		};
-		5080FCD5268698C600EF533C /* Custom Views */ = {
-			isa = PBXGroup;
-			children = (
-				50627CC52685C0C0006491CB /* BaseViewController.swift */,
-				5080FCD126868D7300EF533C /* IBDesignableView.swift */,
-			);
-			path = "Custom Views";
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		50928E652685457A00B588FB = {
@@ -260,14 +247,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				50627CC92685E185006491CB /* RepositoryResponse.swift in Sources */,
-				5080FCD226868D7300EF533C /* IBDesignableView.swift in Sources */,
+				5081B4832687C1F800923BA0 /* Result.swift in Sources */,
 				50928E722685457A00B588FB /* AppDelegate.swift in Sources */,
-				50627CCD2685FB80006491CB /* GithubWebServiceEndpoint.swift in Sources */,
+				50627CCD2685FB80006491CB /* GithubEndpoint.swift in Sources */,
 				50627CCB2685E486006491CB /* ReposListViewModel.swift in Sources */,
 				50627CDA2686337E006491CB /* RepoCell.swift in Sources */,
 				5080FCD4268694C600EF533C /* RepoCellViewModel.swift in Sources */,
-				50627CD02685FD0E006491CB /* GithubWebServiceError.swift in Sources */,
+				50627CD02685FD0E006491CB /* HTTPError.swift in Sources */,
 				50627CC62685C0C0006491CB /* BaseViewController.swift in Sources */,
+				5081B4852687C22100923BA0 /* HTTPURLResponse + Extensions.swift in Sources */,
 				50928E742685457A00B588FB /* SceneDelegate.swift in Sources */,
 				50627CD22685FDEE006491CB /* GithubWebService.swift in Sources */,
 				50627CC32685BEB7006491CB /* ReposListViewController.swift in Sources */,
@@ -417,6 +405,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.project.popular-github-repos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -436,6 +425,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.project.popular-github-repos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

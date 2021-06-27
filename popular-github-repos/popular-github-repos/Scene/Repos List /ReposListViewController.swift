@@ -12,10 +12,20 @@ final class ReposListViewController: BaseViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var centerIndicator: UIActivityIndicatorView!
     
     // MARK: - Variables and Constants
     
     private var viewModel: ReposListViewModel!
+    private var topIndicator = UIRefreshControl()
+    private lazy var bottomIndicator: UIView = {
+        let footer = UIView(frame: .init(x: 0, y: 0, width: view.frame.size.width, height: 70))
+        let indicator = UIActivityIndicatorView(style: .medium)
+        indicator.center = footer.center
+        footer.addSubview(indicator)
+        indicator.startAnimating()
+        return footer
+    }()
     
     // MARK: - Class Functions
     
@@ -31,28 +41,60 @@ final class ReposListViewController: BaseViewController {
         super.viewDidLoad()
 
         setupUI()
-        viewModel.viewDidLoad()
         setupCallBacks()
+        viewModel.viewDidLoad()
     }
 
     // MARK: - Private Functions
     
     private func setupUI(){
         title = "Popular Repositories"
-        tableView.tableFooterView = UIView()
+        topIndicator.addTarget(self, action: #selector(reloadRepos), for: .valueChanged)
+        tableView.refreshControl = topIndicator
+    }
+    
+    @objc dynamic private func reloadRepos(){
+        viewModel.viewDidRefresh()
     }
     
     private func setupCallBacks(){
-        viewModel.onUpdate = { [weak self] in
+        viewModel.onFetchCompleted = { [weak self] (type) in
             self?.tableView.reloadData()
+            switch type {
+            case .firstLoad:
+                self?.centerIndicator.stopAnimating()
+            case .refresh:
+                self?.topIndicator.endRefreshing()
+            case .nextPage:
+                self?.tableView.tableFooterView = nil
+            }
         }
-        viewModel.onShowAlert = { [weak self] (title, message) in
+        viewModel.onFetchingInProgress = { [weak self] (type) in
+            switch type {
+            case .firstLoad:
+                self?.centerIndicator.startAnimating()
+            case .nextPage:
+                self?.tableView.tableFooterView = self?.bottomIndicator
+            default:
+                break
+            }
+        }
+        viewModel.onFetchFailed = { [weak self] (title, message) in
             self?.showAlert(title, message: message)
+        }
+    }
+    
+    // MARK: - ScrollView Delegate
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let position = scrollView.contentOffset.y
+        if position > (tableView.contentSize.height - 70 - scrollView.frame.size.height){
+            viewModel.viewDidScrollToBottom()
         }
     }
 }
 
-// MARK: - TableView Delegates and DataSource
+// MARK: - TableView Delegate and DataSource
 
 extension ReposListViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,15 +102,14 @@ extension ReposListViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let viewModel = viewModel.cellViewModel(for: indexPath)
         
-        if tableView.dequeueReusableCell(withIdentifier: viewModel.identifire) == nil{
-            tableView.register(UINib(nibName: viewModel.identifire, bundle: nil),
-                               forCellReuseIdentifier: viewModel.identifire)
+        if tableView.dequeueReusableCell(withIdentifier: RepoCell.identifire) == nil{
+            tableView.register(UINib(nibName: RepoCell.identifire, bundle: nil),
+                               forCellReuseIdentifier: RepoCell.identifire)
         }
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: viewModel.identifire, for: indexPath) as? RepoCell {
-            cell.updateCell(with: viewModel)
+        if let cell = tableView.dequeueReusableCell(withIdentifier: RepoCell.identifire, for: indexPath) as? RepoCell {
+            cell.updateCell(with: viewModel.cellViewModel(for: indexPath))
             return cell
         }
         

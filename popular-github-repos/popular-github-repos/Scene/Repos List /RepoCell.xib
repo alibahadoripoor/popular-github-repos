@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xob-Pi-3hF" customClass="IBDesignableView" customModule="popular_github_repos" customModuleProvider="target">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xob-Pi-3hF">
                         <rect key="frame" x="16" y="16" width="288" height="134"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSf-KE-Lty">
@@ -27,37 +27,36 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Wbw-qZ-ndn"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeb-F2-lQj">
-                                <rect key="frame" x="16" y="44" width="256" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Programming Language" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeb-F2-lQj">
+                                <rect key="frame" x="16" y="36" width="256" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="left" semanticContentAttribute="forceLeftToRight" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="e2H-ix-tj0">
                                 <rect key="frame" x="16" y="92" width="256" height="26"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIV-3V-H9x">
-                                        <rect key="frame" x="0.0" y="0.0" width="161.5" height="26"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="162.5" height="26"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.branch" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UY2-wc-njK">
-                                        <rect key="frame" x="169.5" y="2" width="20" height="23"/>
-                                        <color key="tintColor" name="MyPurple"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="branch" translatesAutoresizingMaskIntoConstraints="NO" id="UY2-wc-njK">
+                                        <rect key="frame" x="170.5" y="0.0" width="21" height="26"/>
+                                        <color key="tintColor" name="MyGreen"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qi-B9-2Jh">
-                                        <rect key="frame" x="197.5" y="0.0" width="28.5" height="26"/>
+                                        <rect key="frame" x="199.5" y="0.0" width="28.5" height="26"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dqV-BP-mEC">
-                                        <rect key="frame" x="234" y="-0.5" width="22" height="26"/>
-                                        <color key="tintColor" name="MyPurple"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="dqV-BP-mEC">
+                                        <rect key="frame" x="236" y="0.0" width="20" height="26"/>
+                                        <color key="tintColor" name="MyYellow"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -74,22 +73,11 @@
                             <constraint firstItem="e2H-ix-tj0" firstAttribute="top" secondItem="xeb-F2-lQj" secondAttribute="bottom" constant="8" id="BP6-cD-RuH"/>
                             <constraint firstItem="e2H-ix-tj0" firstAttribute="leading" secondItem="Xob-Pi-3hF" secondAttribute="leading" constant="16" id="R91-vJ-FeA"/>
                             <constraint firstAttribute="bottom" secondItem="e2H-ix-tj0" secondAttribute="bottom" constant="16" id="Wdu-ZF-12f"/>
-                            <constraint firstItem="xeb-F2-lQj" firstAttribute="top" secondItem="JSf-KE-Lty" secondAttribute="bottom" constant="8" id="bGd-tM-aGj"/>
+                            <constraint firstItem="xeb-F2-lQj" firstAttribute="top" secondItem="JSf-KE-Lty" secondAttribute="bottom" id="bGd-tM-aGj"/>
                             <constraint firstItem="JSf-KE-Lty" firstAttribute="top" secondItem="Xob-Pi-3hF" secondAttribute="top" constant="16" id="clM-tW-xZG"/>
                             <constraint firstAttribute="trailing" secondItem="xeb-F2-lQj" secondAttribute="trailing" constant="16" id="g4c-Ed-swK"/>
                             <constraint firstAttribute="trailing" secondItem="e2H-ix-tj0" secondAttribute="trailing" constant="16" id="tUx-db-PAq"/>
                         </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="10"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                <real key="value" value="2"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                <color key="value" name="MyPurple"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
                 <constraints>
@@ -102,8 +90,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="containerView" destination="Xob-Pi-3hF" id="Mcp-sS-VFv"/>
-                <outlet property="desLabel" destination="xeb-F2-lQj" id="AHq-kV-bJS"/>
                 <outlet property="forksLabel" destination="iIV-3V-H9x" id="RfE-ef-MoD"/>
+                <outlet property="languageLabel" destination="xeb-F2-lQj" id="AHq-kV-bJS"/>
                 <outlet property="repoNameLabel" destination="JSf-KE-Lty" id="8Rm-h9-7rY"/>
                 <outlet property="starsLabel" destination="5qi-B9-2Jh" id="Exq-Lc-lGl"/>
             </connections>
@@ -111,14 +99,14 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="arrow.branch" catalog="system" width="128" height="108"/>
-        <image name="star.fill" catalog="system" width="128" height="116"/>
-        <namedColor name="MyPurple">
-            <color red="0.38039215686274508" green="0.043137254901960784" blue="0.79607843137254897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="branch" width="21" height="21"/>
+        <image name="star" width="20" height="20"/>
+        <namedColor name="MyGreen">
+            <color red="0.0" green="0.47450980392156861" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <namedColor name="MyYellow">
+            <color red="0.61960784313725492" green="0.61568627450980395" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

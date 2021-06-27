@@ -20,7 +20,8 @@ struct RepositoryResponse: Decodable {
 struct Repository: Decodable {
     let id: Int
     let name: String
-    let description: String
+    let description: String?
+    let language: String?
     let starsCount: Int
     let forksCount: Int
     
@@ -28,6 +29,7 @@ struct Repository: Decodable {
         case id
         case name
         case description
+        case language
         case starsCount = "stargazers_count"
         case forksCount = "forks_count"
     }

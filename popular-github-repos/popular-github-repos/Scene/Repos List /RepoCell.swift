@@ -8,35 +8,45 @@
 import UIKit
 
 final class RepoCell: UITableViewCell {
+    
+    static let identifire = String(describing: RepoCell.self)
 
+    //MARK: - Outlets
+    
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var repoNameLabel: UILabel!
-    @IBOutlet weak var desLabel: UILabel!
+    @IBOutlet weak var languageLabel: UILabel!
     @IBOutlet weak var starsLabel: UILabel!
     @IBOutlet weak var forksLabel: UILabel!
     
+    //MARK: - Update UI Functions
+    
     func updateCell(with viewModel: RepoCellViewModel){
         repoNameLabel.text = viewModel.name
-        desLabel.text = viewModel.des
+        languageLabel.text = viewModel.language
         starsLabel.text = viewModel.starsCount
         forksLabel.text = viewModel.forksCount
     }
     
+    //MARK: - Lifecycle
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        backgroundColor = .clear
+        selectionStyle = .none
+        containerViewSetup()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        backgroundColor = .clear
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if (traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)) {
+             containerView.layer.borderColor = UIColor(named: "MyPurple")?.cgColor
+        }
     }
     
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-       if #available(iOS 13.0, *) {
-           if (traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)) {
-                containerView.layer.borderColor = UIColor(named: "MyPurple")?.cgColor
-           }
-       }
+    //MARK: - Private UI Functions
+    
+    private func containerViewSetup(){
+        containerView.layer.cornerRadius = 10
+        containerView.layer.borderWidth = 2
+        containerView.layer.borderColor = UIColor(named: "MyPurple")?.cgColor
     }
 }

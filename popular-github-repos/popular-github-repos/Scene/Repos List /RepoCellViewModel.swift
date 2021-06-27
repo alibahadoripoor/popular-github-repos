@@ -9,16 +9,16 @@ import Foundation
 
 final class RepoCellViewModel {
     let name: String
-    let des: String
+    let des: String?
+    let language: String?
     let starsCount: String
     let forksCount: String
-    let identifire: String
     
     init(repo: Repository) {
         name = repo.name
         des = repo.description
+        language = repo.language != nil ? repo.language! + " programming language" : ""
         starsCount = "\(repo.starsCount)"
         forksCount = "\(repo.forksCount)"
-        identifire = String(describing: RepoCell.self)
     }
 }

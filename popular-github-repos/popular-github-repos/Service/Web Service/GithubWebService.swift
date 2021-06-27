@@ -7,10 +7,10 @@
 
 import Foundation
 
-typealias ReposCompletion = (RepositoryResponse?, GithubWebServiceError?) -> ()
+typealias ReposCompletion = (Result<RepositoryResponse, HTTPError>) -> Void
 
 protocol ReposWebServiceProtocol {
-    func fetchRepos(completion: @escaping ReposCompletion)
+    func fetchRepos(for page: Int, completion: @escaping ReposCompletion)
 }
 
 final class GithubWebService {
@@ -23,31 +23,29 @@ final class GithubWebService {
 
 extension GithubWebService: ReposWebServiceProtocol {
     
-    func fetchRepos(completion: @escaping ReposCompletion) {
-        fetchData(for: .repos, completion: completion)
+    func fetchRepos(for page: Int, completion: @escaping ReposCompletion) {
+        fetchData(for: .repos(page: page), completion: completion)
     }
     
-    private func fetchData<T>(for endPoint: GithubWebServiceEndpoint, completion: @escaping (T?, GithubWebServiceError?) -> ()) where T: Decodable {
+    private func fetchData<T>(for endPoint: GithubEndpoint, completion: @escaping (Result<T, HTTPError>) -> Void) where T: Decodable {
         
         guard let url = endPoint.url else {
-            completion(nil, .network(description: "Couldn't create URL"))
+            completion(.failure(.network(description: "creating URL is not possible")))
             return
         }
         
-        dataService.fetchData(for: url) { (data, error) in
-            
-            guard error == nil else{
-                completion(nil, error)
-                return
-            }
-            
-            do {
-                let decoder = JSONDecoder()
-                let object: T = try decoder.decode(T.self, from: data!)
-                completion(object, nil)
-            } catch {
-                debugPrint("Unable to decode data: \(error.localizedDescription)")
-                completion(nil, .parsing(description: "Unable to decode data: \(error.localizedDescription)"))
+        dataService.fetchData(for: url) { result in
+            switch result{
+            case .failure(let error):
+                completion(.failure(error))
+            case .success(let data):
+                do {
+                    let decoder = JSONDecoder()
+                    let object: T = try decoder.decode(T.self, from: data)
+                    completion(.success(object))
+                } catch let error {
+                    completion(.failure(.parsing(description: error.localizedDescription)))
+                }
             }
         }
     }
