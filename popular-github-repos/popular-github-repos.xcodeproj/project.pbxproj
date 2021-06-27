@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13148306D6C1F42B2E269E81 /* Pods_popular_github_repos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F6EC325ECA0057917113B2 /* Pods_popular_github_repos.framework */; };
+		500FAFBC26889A830069ACA4 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500FAFBB26889A830069ACA4 /* ImageLoader.swift */; };
 		50627CC32685BEB7006491CB /* ReposListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50627CC12685BEB7006491CB /* ReposListViewController.swift */; };
 		50627CC42685BEB7006491CB /* ReposListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50627CC22685BEB7006491CB /* ReposListViewController.xib */; };
 		50627CC62685C0C0006491CB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50627CC52685C0C0006491CB /* BaseViewController.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F2993DD8F186FCEAF4584EC /* Pods-popular-github-repos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-popular-github-repos.debug.xcconfig"; path = "Target Support Files/Pods-popular-github-repos/Pods-popular-github-repos.debug.xcconfig"; sourceTree = "<group>"; };
+		500FAFBB26889A830069ACA4 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		50627CC12685BEB7006491CB /* ReposListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposListViewController.swift; sourceTree = "<group>"; };
 		50627CC22685BEB7006491CB /* ReposListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReposListViewController.xib; sourceTree = "<group>"; };
 		50627CC52685C0C0006491CB /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +52,8 @@
 		50928E7A2685457A00B588FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50928E7D2685457A00B588FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50928E7F2685457A00B588FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D06F354E2BA5803D382A9C1 /* Pods-popular-github-repos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-popular-github-repos.release.xcconfig"; path = "Target Support Files/Pods-popular-github-repos/Pods-popular-github-repos.release.xcconfig"; sourceTree = "<group>"; };
+		E6F6EC325ECA0057917113B2 /* Pods_popular_github_repos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_popular_github_repos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13148306D6C1F42B2E269E81 /* Pods_popular_github_repos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				50627CD12685FDEE006491CB /* GithubWebService.swift */,
+				500FAFBB26889A830069ACA4 /* ImageLoader.swift */,
 			);
 			path = "Web Service";
 			sourceTree = "<group>";
@@ -153,6 +161,8 @@
 			children = (
 				50928E702685457A00B588FB /* popular-github-repos */,
 				50928E6F2685457A00B588FB /* Products */,
+				DC4E2F4DF22A88BCBB9F39C9 /* Pods */,
+				D2E238A40FCA173291551EE8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -175,6 +185,23 @@
 			path = "popular-github-repos";
 			sourceTree = "<group>";
 		};
+		D2E238A40FCA173291551EE8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6F6EC325ECA0057917113B2 /* Pods_popular_github_repos.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC4E2F4DF22A88BCBB9F39C9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4F2993DD8F186FCEAF4584EC /* Pods-popular-github-repos.debug.xcconfig */,
+				8D06F354E2BA5803D382A9C1 /* Pods-popular-github-repos.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -182,9 +209,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50928E822685457A00B588FB /* Build configuration list for PBXNativeTarget "popular-github-repos" */;
 			buildPhases = (
+				1FF3BEF830AC1F35DC45FB8D /* [CP] Check Pods Manifest.lock */,
 				50928E6A2685457A00B588FB /* Sources */,
 				50928E6B2685457A00B588FB /* Frameworks */,
 				50928E6C2685457A00B588FB /* Resources */,
+				1E7A0C79BA121FF149E94BBA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -241,6 +270,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1E7A0C79BA121FF149E94BBA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-popular-github-repos/Pods-popular-github-repos-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-popular-github-repos/Pods-popular-github-repos-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-popular-github-repos/Pods-popular-github-repos-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1FF3BEF830AC1F35DC45FB8D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-popular-github-repos-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		50928E6A2685457A00B588FB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -260,6 +331,7 @@
 				50627CD22685FDEE006491CB /* GithubWebService.swift in Sources */,
 				50627CC32685BEB7006491CB /* ReposListViewController.swift in Sources */,
 				50627CD42685FEBB006491CB /* DataService.swift in Sources */,
+				500FAFBC26889A830069ACA4 /* ImageLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +467,7 @@
 		};
 		50928E832685457A00B588FB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F2993DD8F186FCEAF4584EC /* Pods-popular-github-repos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -405,7 +478,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.project.popular-github-repos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -415,6 +488,7 @@
 		};
 		50928E842685457A00B588FB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D06F354E2BA5803D382A9C1 /* Pods-popular-github-repos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -425,7 +499,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.project.popular-github-repos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
