@@ -59,22 +59,28 @@ final class ReposListViewController: BaseViewController {
     
     private func setupCallBacks(){
         viewModel.onFetchCompleted = { [weak self] (type) in
-            self?.tableView.reloadData()
+            guard let self = self else {
+                return
+            }
+            self.tableView.reloadData()
             switch type {
             case .firstLoad:
-                self?.centerIndicator.stopAnimating()
+                self.centerIndicator.stopAnimating()
             case .refresh:
-                self?.topIndicator.endRefreshing()
+                self.topIndicator.endRefreshing()
             case .nextPage:
-                self?.tableView.tableFooterView = nil
+                self.tableView.tableFooterView = nil
             }
         }
         viewModel.onFetchingInProgress = { [weak self] (type) in
+            guard let self = self else {
+                return
+            }
             switch type {
             case .firstLoad:
-                self?.centerIndicator.startAnimating()
+                self.centerIndicator.startAnimating()
             case .nextPage:
-                self?.tableView.tableFooterView = self?.bottomIndicator
+                self.tableView.tableFooterView = self.bottomIndicator
             default:
                 break
             }
