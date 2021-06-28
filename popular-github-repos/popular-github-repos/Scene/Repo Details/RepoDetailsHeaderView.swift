@@ -1,35 +1,37 @@
 //
-//  RepoCell.swift
+//  RepoDetailsHeaderView.swift
 //  popular-github-repos
 //
-//  Created by Mohammadali Bahadoripoor on 25.06.21.
+//  Created by Mohammadali Bahadoripoor on 28.06.21.
 //
 
 import UIKit
 import Kingfisher
 
-final class RepoCell: UITableViewCell {
+final class RepoDetailsHeaderView: BaseXibView {
     
-    //MARK: - Cell Identifire
+    // MARK: - Outlets
     
-    static let identifire = String(describing: RepoCell.self)
-
-    //MARK: - Outlets
-    
-    @IBOutlet private weak var containerView: UIView!
-    @IBOutlet private weak var profileImageView: UIImageView!
-    @IBOutlet private weak var profileLabel: UILabel!
-    @IBOutlet private weak var repoNameLabel: UILabel!
-    @IBOutlet private weak var languageLabel: UILabel!
-    @IBOutlet private weak var starsLabel: UILabel!
+    @IBOutlet internal weak var profileImageView: UIImageView!
+    @IBOutlet internal weak var profileLabel: UILabel!
+    @IBOutlet internal weak var repoNameLabel: UILabel!
+    @IBOutlet internal weak var languageLabel: UILabel!
+    @IBOutlet internal weak var starsLabel: UILabel!
+    @IBOutlet internal weak var forksLabel: UILabel!
+    @IBOutlet internal weak var watchersLabel: UILabel!
+    @IBOutlet internal weak var descriptionLabel: UILabel!
+    @IBOutlet internal weak var footerView: UIView!
     
     //MARK: - Update UI Functions
     
-    func updateCell(with viewModel: RepoCellViewModel){
+    func updateHeader(with viewModel: RepoDetailsHeaderViewModel){
         profileLabel.text = viewModel.ownerName
         repoNameLabel.text = viewModel.name
         languageLabel.text = viewModel.language
         starsLabel.text = viewModel.starsCount
+        forksLabel.text = viewModel.forksCount
+        watchersLabel.text = viewModel.watchersCount
+        descriptionLabel.text = viewModel.description
         
         let placeholder = UIImage(named: "user")
         if let url = viewModel.ownerAvatarURL{
@@ -40,31 +42,27 @@ final class RepoCell: UITableViewCell {
     
     //MARK: - Lifecycle
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        selectionStyle = .none
-        containerViewSetup()
+    override func setupUI() {
+        super.setupUI()
         profileImageViewSetup()
+        footerViewSetup()
     }
-
+    
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         if (traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)) {
-            containerView.layer.borderColor = UIColor(named: "MyPurple")?.cgColor
             profileImageView.layer.borderColor = UIColor(named: "MyPurple")?.cgColor
         }
     }
     
     //MARK: - Private Functions
     
-    private func containerViewSetup(){
-        containerView.layer.cornerRadius = 10
-        containerView.layer.borderWidth = 2
-        containerView.layer.borderColor = UIColor(named: "MyPurple")?.cgColor
-    }
-    
     private func profileImageViewSetup(){
-        profileImageView.layer.cornerRadius = 17
+        profileImageView.layer.cornerRadius = 25
         profileImageView.layer.borderWidth = 2
         profileImageView.layer.borderColor = UIColor(named: "MyPurple")?.cgColor
+    }
+    
+    private func footerViewSetup(){
+        footerView.layer.cornerRadius = 8
     }
 }

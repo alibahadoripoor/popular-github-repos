@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		13148306D6C1F42B2E269E81 /* Pods_popular_github_repos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F6EC325ECA0057917113B2 /* Pods_popular_github_repos.framework */; };
-		500FAFBC26889A830069ACA4 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500FAFBB26889A830069ACA4 /* ImageLoader.swift */; };
 		50627CC32685BEB7006491CB /* ReposListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50627CC12685BEB7006491CB /* ReposListViewController.swift */; };
 		50627CC42685BEB7006491CB /* ReposListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50627CC22685BEB7006491CB /* ReposListViewController.xib */; };
 		50627CC62685C0C0006491CB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50627CC52685C0C0006491CB /* BaseViewController.swift */; };
@@ -27,11 +26,18 @@
 		50928E742685457A00B588FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50928E732685457A00B588FB /* SceneDelegate.swift */; };
 		50928E7B2685457A00B588FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50928E7A2685457A00B588FB /* Assets.xcassets */; };
 		50928E7E2685457A00B588FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50928E7C2685457A00B588FB /* LaunchScreen.storyboard */; };
+		50A855632688F9FB00840CE6 /* RepoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A855612688F9FB00840CE6 /* RepoDetailsViewController.swift */; };
+		50A855642688F9FB00840CE6 /* RepoDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50A855622688F9FB00840CE6 /* RepoDetailsViewController.xib */; };
+		50A855662688FA6C00840CE6 /* RepoDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A855652688FA6C00840CE6 /* RepoDetailsViewModel.swift */; };
+		50A85568268928D700840CE6 /* RepoDetailsHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A85567268928D700840CE6 /* RepoDetailsHeaderViewModel.swift */; };
+		50A8556A26892F1900840CE6 /* BaseXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A8556926892F1900840CE6 /* BaseXibView.swift */; };
+		50A8556D268933A500840CE6 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A8556C268933A500840CE6 /* UIView + Extensions.swift */; };
+		50A8556F2689340B00840CE6 /* RepoDetailsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50A8556E2689340B00840CE6 /* RepoDetailsHeaderView.xib */; };
+		50A855712689342F00840CE6 /* RepoDetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A855702689342F00840CE6 /* RepoDetailsHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4F2993DD8F186FCEAF4584EC /* Pods-popular-github-repos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-popular-github-repos.debug.xcconfig"; path = "Target Support Files/Pods-popular-github-repos/Pods-popular-github-repos.debug.xcconfig"; sourceTree = "<group>"; };
-		500FAFBB26889A830069ACA4 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		50627CC12685BEB7006491CB /* ReposListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposListViewController.swift; sourceTree = "<group>"; };
 		50627CC22685BEB7006491CB /* ReposListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReposListViewController.xib; sourceTree = "<group>"; };
 		50627CC52685C0C0006491CB /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +58,14 @@
 		50928E7A2685457A00B588FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50928E7D2685457A00B588FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50928E7F2685457A00B588FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50A855612688F9FB00840CE6 /* RepoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailsViewController.swift; sourceTree = "<group>"; };
+		50A855622688F9FB00840CE6 /* RepoDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoDetailsViewController.xib; sourceTree = "<group>"; };
+		50A855652688FA6C00840CE6 /* RepoDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailsViewModel.swift; sourceTree = "<group>"; };
+		50A85567268928D700840CE6 /* RepoDetailsHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailsHeaderViewModel.swift; sourceTree = "<group>"; };
+		50A8556926892F1900840CE6 /* BaseXibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXibView.swift; sourceTree = "<group>"; };
+		50A8556C268933A500840CE6 /* UIView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
+		50A8556E2689340B00840CE6 /* RepoDetailsHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoDetailsHeaderView.xib; sourceTree = "<group>"; };
+		50A855702689342F00840CE6 /* RepoDetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailsHeaderView.swift; sourceTree = "<group>"; };
 		8D06F354E2BA5803D382A9C1 /* Pods-popular-github-repos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-popular-github-repos.release.xcconfig"; path = "Target Support Files/Pods-popular-github-repos/Pods-popular-github-repos.release.xcconfig"; sourceTree = "<group>"; };
 		E6F6EC325ECA0057917113B2 /* Pods_popular_github_repos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_popular_github_repos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -68,6 +82,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5031839F2689437F007F89AD /* Super Class */ = {
+			isa = PBXGroup;
+			children = (
+				50627CC52685C0C0006491CB /* BaseViewController.swift */,
+				50A8556926892F1900840CE6 /* BaseXibView.swift */,
+			);
+			path = "Super Class";
+			sourceTree = "<group>";
+		};
 		50627CBA2685BC5F006491CB /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				50627CD12685FDEE006491CB /* GithubWebService.swift */,
-				500FAFBB26889A830069ACA4 /* ImageLoader.swift */,
 			);
 			path = "Web Service";
 			sourceTree = "<group>";
@@ -131,8 +153,10 @@
 		50627CC72685C3AF006491CB /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				50627CC52685C0C0006491CB /* BaseViewController.swift */,
+				50A8556B2689338E00840CE6 /* Helper */,
+				5031839F2689437F007F89AD /* Super Class */,
 				50627CBE2685BD3A006491CB /* Repos List  */,
+				50A855602688F9C100840CE6 /* Repo Details */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -183,6 +207,27 @@
 				50627CC02685BDA8006491CB /* SupportFiles */,
 			);
 			path = "popular-github-repos";
+			sourceTree = "<group>";
+		};
+		50A855602688F9C100840CE6 /* Repo Details */ = {
+			isa = PBXGroup;
+			children = (
+				50A855652688FA6C00840CE6 /* RepoDetailsViewModel.swift */,
+				50A855612688F9FB00840CE6 /* RepoDetailsViewController.swift */,
+				50A855622688F9FB00840CE6 /* RepoDetailsViewController.xib */,
+				50A85567268928D700840CE6 /* RepoDetailsHeaderViewModel.swift */,
+				50A855702689342F00840CE6 /* RepoDetailsHeaderView.swift */,
+				50A8556E2689340B00840CE6 /* RepoDetailsHeaderView.xib */,
+			);
+			path = "Repo Details";
+			sourceTree = "<group>";
+		};
+		50A8556B2689338E00840CE6 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				50A8556C268933A500840CE6 /* UIView + Extensions.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		D2E238A40FCA173291551EE8 /* Frameworks */ = {
@@ -261,8 +306,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50A8556F2689340B00840CE6 /* RepoDetailsHeaderView.xib in Resources */,
 				50928E7E2685457A00B588FB /* LaunchScreen.storyboard in Resources */,
 				50627CC42685BEB7006491CB /* ReposListViewController.xib in Resources */,
+				50A855642688F9FB00840CE6 /* RepoDetailsViewController.xib in Resources */,
 				50928E7B2685457A00B588FB /* Assets.xcassets in Resources */,
 				50627CDB2686337E006491CB /* RepoCell.xib in Resources */,
 			);
@@ -317,21 +364,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50A8556D268933A500840CE6 /* UIView + Extensions.swift in Sources */,
 				50627CC92685E185006491CB /* RepositoryResponse.swift in Sources */,
 				5081B4832687C1F800923BA0 /* Result.swift in Sources */,
 				50928E722685457A00B588FB /* AppDelegate.swift in Sources */,
 				50627CCD2685FB80006491CB /* GithubEndpoint.swift in Sources */,
+				50A855712689342F00840CE6 /* RepoDetailsHeaderView.swift in Sources */,
 				50627CCB2685E486006491CB /* ReposListViewModel.swift in Sources */,
+				50A855632688F9FB00840CE6 /* RepoDetailsViewController.swift in Sources */,
 				50627CDA2686337E006491CB /* RepoCell.swift in Sources */,
 				5080FCD4268694C600EF533C /* RepoCellViewModel.swift in Sources */,
 				50627CD02685FD0E006491CB /* HTTPError.swift in Sources */,
 				50627CC62685C0C0006491CB /* BaseViewController.swift in Sources */,
 				5081B4852687C22100923BA0 /* HTTPURLResponse + Extensions.swift in Sources */,
 				50928E742685457A00B588FB /* SceneDelegate.swift in Sources */,
+				50A855662688FA6C00840CE6 /* RepoDetailsViewModel.swift in Sources */,
 				50627CD22685FDEE006491CB /* GithubWebService.swift in Sources */,
 				50627CC32685BEB7006491CB /* ReposListViewController.swift in Sources */,
 				50627CD42685FEBB006491CB /* DataService.swift in Sources */,
-				500FAFBC26889A830069ACA4 /* ImageLoader.swift in Sources */,
+				50A8556A26892F1900840CE6 /* BaseXibView.swift in Sources */,
+				50A85568268928D700840CE6 /* RepoDetailsHeaderViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,7 +530,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.project.popular-github-repos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -499,7 +551,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.project.popular-github-repos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

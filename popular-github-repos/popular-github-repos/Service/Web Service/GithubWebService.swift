@@ -7,10 +7,16 @@
 
 import Foundation
 
-typealias ReposCompletion = (Result<RepositoryResponse, HTTPError>) -> Void
+typealias RepoListCompletion = (Result<RepositoryResponse, HTTPError>) -> Void
+typealias RepoCompletion = (Result<Repository, HTTPError>) -> Void
 
-protocol ReposWebServiceProtocol {
-    func fetchRepos(for page: Int, completion: @escaping ReposCompletion)
+protocol RepoListWebServiceProtocol {
+    func fetchRepos(for page: Int, completion: @escaping RepoListCompletion)
+}
+
+protocol RepoWebServiceProtocol {
+    func fetchRepo(ownerName: String, repoName: String, completion: @escaping RepoCompletion)
+    func cancel()
 }
 
 final class GithubWebService {
@@ -18,13 +24,6 @@ final class GithubWebService {
     
     init(dataService: DataServiceProtocol = DataService()) {
         self.dataService = dataService
-    }
-}
-
-extension GithubWebService: ReposWebServiceProtocol {
-    
-    func fetchRepos(for page: Int, completion: @escaping ReposCompletion) {
-        fetchData(for: .repos(page: page), completion: completion)
     }
     
     private func fetchData<T>(for endPoint: GithubEndpoint, completion: @escaping (Result<T, HTTPError>) -> Void) where T: Decodable {
@@ -51,3 +50,18 @@ extension GithubWebService: ReposWebServiceProtocol {
     }
 }
 
+extension GithubWebService: RepoListWebServiceProtocol {
+    func fetchRepos(for page: Int, completion: @escaping RepoListCompletion) {
+        fetchData(for: .repoList(page: page), completion: completion)
+    }
+}
+
+extension GithubWebService: RepoWebServiceProtocol {
+    func fetchRepo(ownerName: String, repoName: String, completion: @escaping RepoCompletion) {
+        fetchData(for: .repo(ownerName: ownerName, repoName: repoName), completion: completion)
+    }
+    
+    func cancel() {
+        dataService.cancel()
+    }
+}

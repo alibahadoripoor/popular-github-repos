@@ -29,9 +29,9 @@ final class ReposListViewController: BaseViewController {
     
     // MARK: - Class Functions
     
-    class func newInstance() -> ReposListViewController {
+    class func newInstance(with viewModel: ReposListViewModel) -> ReposListViewController {
         let viewController = ReposListViewController(nibName: String(describing: ReposListViewController.self), bundle: nil)
-        viewController.viewModel = ReposListViewModel()
+        viewController.viewModel = viewModel
         return viewController
     }
 
@@ -72,6 +72,7 @@ final class ReposListViewController: BaseViewController {
                 self.tableView.tableFooterView = nil
             }
         }
+        
         viewModel.onFetchingInProgress = { [weak self] (type) in
             guard let self = self else {
                 return
@@ -85,6 +86,7 @@ final class ReposListViewController: BaseViewController {
                 break
             }
         }
+        
         viewModel.onFetchFailed = { [weak self] (title, message) in
             self?.showAlert(title, message: message)
         }
@@ -120,5 +122,9 @@ extension ReposListViewController: UITableViewDelegate, UITableViewDataSource{
         }
         
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.cellDidSelect(at: indexPath, navigationController: navigationController)
     }
 }

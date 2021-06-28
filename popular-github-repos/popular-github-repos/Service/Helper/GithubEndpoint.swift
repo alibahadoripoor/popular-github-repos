@@ -8,7 +8,8 @@
 import Foundation
 
 enum GithubEndpoint{
-    case repos(page: Int)
+    case repoList(page: Int)
+    case repo(ownerName: String, repoName: String)
     
     private var scheme: String {
         return "https"
@@ -18,8 +19,12 @@ enum GithubEndpoint{
         return "api.github.com"
     }
     
-    private var reposBasePath: String {
+    private var repoListBasePath: String {
         return "/search/repositories"
+    }
+    
+    private var repoBasePath: String {
+        return "/repos/"
     }
     
     var url: URL? {
@@ -28,13 +33,16 @@ enum GithubEndpoint{
         components.host = host
         
         switch self {
-        case .repos(let page):
-            components.path = reposBasePath
+        case .repoList(let page):
+            components.path = repoListBasePath
             components.queryItems = [
                 URLQueryItem(name: "q", value: "stars:>=1"),
                 URLQueryItem(name: "sort", value: "stars"),
                 URLQueryItem(name: "page", value: "\(page)")
             ]
+            return components.url
+        case .repo(let ownerName, let repoName):
+            components.path = repoBasePath + ownerName + "/" + repoName
             return components.url
         }
     }

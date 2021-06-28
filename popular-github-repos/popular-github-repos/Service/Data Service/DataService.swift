@@ -11,6 +11,7 @@ typealias fetchDataCompletion = (Data?, HTTPError?) -> ()
 
 protocol DataServiceProtocol {
     func fetchData(for url: URL, completion: @escaping (Result<Data, HTTPError>) -> Void)
+    func cancel()
 }
 
 final class DataService: DataServiceProtocol{
@@ -39,5 +40,9 @@ final class DataService: DataServiceProtocol{
             }
         }
         task?.resume()
+    }
+    
+    func cancel(){
+        task?.cancel()
     }
 }

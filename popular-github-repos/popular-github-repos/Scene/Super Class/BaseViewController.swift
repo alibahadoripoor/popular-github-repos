@@ -7,8 +7,8 @@
 
 import UIKit
 
-class BaseViewController: UIViewController {
-
+class BaseViewController: UIViewController, UINavigationControllerDelegate {
+    
     // MARK: - Initialization
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -20,7 +20,19 @@ class BaseViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureNavigationController()
+    }
+    
     // MARK: - UI
+    
+    func configureNavigationController(){
+        navigationItem.backBarButtonItem = UIBarButtonItem()
+        navigationController?.navigationBar.tintColor = UIColor(named: "MyPurple")
+    }
     
     func showAlert(_ title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

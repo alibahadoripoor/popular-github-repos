@@ -35,35 +35,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="e2H-ix-tj0" userLabel="Detail Stack View">
-                                <rect key="frame" x="16" y="172" width="256" height="26"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIV-3V-H9x">
-                                        <rect key="frame" x="0.0" y="0.0" width="162.5" height="26"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="branch" translatesAutoresizingMaskIntoConstraints="NO" id="UY2-wc-njK">
-                                        <rect key="frame" x="170.5" y="0.0" width="21" height="26"/>
-                                        <color key="tintColor" name="MyGreen"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qi-B9-2Jh">
-                                        <rect key="frame" x="199.5" y="0.0" width="28.5" height="26"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="dqV-BP-mEC">
-                                        <rect key="frame" x="236" y="0.0" width="20" height="26"/>
-                                        <color key="tintColor" name="MyYellow"/>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="5sZ-Hs-7IB"/>
-                                    <constraint firstAttribute="height" constant="26" id="BGg-gN-gvr"/>
-                                </constraints>
-                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Profile Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMW-Ib-hpx">
                                 <rect key="frame" x="58" y="16" width="214" height="34"/>
                                 <constraints>
@@ -80,6 +51,25 @@
                                     <constraint firstAttribute="height" constant="34" id="t7B-wM-Kdp"/>
                                 </constraints>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="e2H-ix-tj0" userLabel="Detail Stack View">
+                                <rect key="frame" x="16" y="172" width="256" height="26"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qi-B9-2Jh">
+                                        <rect key="frame" x="0.0" y="0.0" width="232" height="26"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="dqV-BP-mEC">
+                                        <rect key="frame" x="236" y="0.0" width="20" height="26"/>
+                                        <color key="tintColor" name="MyOrange"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="5sZ-Hs-7IB"/>
+                                    <constraint firstAttribute="height" constant="26" id="BGg-gN-gvr"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
@@ -111,8 +101,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="containerView" destination="Xob-Pi-3hF" id="Mcp-sS-VFv"/>
-                <outlet property="descriptionLabel" destination="xeb-F2-lQj" id="AHq-kV-bJS"/>
-                <outlet property="forksLabel" destination="iIV-3V-H9x" id="RfE-ef-MoD"/>
+                <outlet property="languageLabel" destination="xeb-F2-lQj" id="AHq-kV-bJS"/>
                 <outlet property="profileImageView" destination="VwU-u6-h3w" id="IeQ-9M-CPN"/>
                 <outlet property="profileLabel" destination="fMW-Ib-hpx" id="BYf-op-wao"/>
                 <outlet property="repoNameLabel" destination="JSf-KE-Lty" id="8Rm-h9-7rY"/>
@@ -122,14 +111,10 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="branch" width="21" height="21"/>
         <image name="star" width="20" height="20"/>
         <image name="user" width="201" height="200"/>
-        <namedColor name="MyGreen">
-            <color red="0.0" green="0.47450980392156861" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="MyYellow">
-            <color red="0.61960784313725492" green="0.61568627450980395" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="MyOrange">
+            <color red="0.96078431372549022" green="0.56470588235294117" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
