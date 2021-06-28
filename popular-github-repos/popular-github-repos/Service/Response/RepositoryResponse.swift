@@ -26,7 +26,6 @@ struct Repository: Decodable {
     let starsCount: Int
     let forksCount: Int
     let watchersCount: Int
-    let lastUpdate: String
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -37,7 +36,6 @@ struct Repository: Decodable {
         case starsCount = "stargazers_count"
         case forksCount = "forks_count"
         case watchersCount = "watchers_count"
-        case lastUpdate = "updated_at"
     }
 }
 

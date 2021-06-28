@@ -7,10 +7,10 @@
 
 import Foundation
 
-typealias fetchDataCompletion = (Data?, HTTPError?) -> ()
+typealias fetchDataCompletion = (Result<Data, HTTPError>) -> Void
 
 protocol DataServiceProtocol {
-    func fetchData(for url: URL, completion: @escaping (Result<Data, HTTPError>) -> Void)
+    func fetchData(for url: URL, completion: @escaping fetchDataCompletion)
     func cancel()
 }
 
@@ -18,7 +18,7 @@ final class DataService: DataServiceProtocol{
     private let session: URLSession = .shared
     private var task: URLSessionDataTask?
     
-    func fetchData(for url: URL, completion: @escaping (Result<Data, HTTPError>) -> Void){
+    func fetchData(for url: URL, completion: @escaping fetchDataCompletion){
         
         task = session.dataTask(with: url) { (data, response, error) in
             
