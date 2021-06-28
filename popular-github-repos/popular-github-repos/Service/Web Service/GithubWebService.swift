@@ -7,11 +7,11 @@
 
 import Foundation
 
-typealias RepoListCompletion = (Result<RepositoryResponse, HTTPError>) -> Void
+typealias ReposListCompletion = (Result<RepositoryResponse, HTTPError>) -> Void
 typealias RepoCompletion = (Result<Repository, HTTPError>) -> Void
 
-protocol RepoListWebServiceProtocol {
-    func fetchRepos(for page: Int, completion: @escaping RepoListCompletion)
+protocol ReposListWebServiceProtocol {
+    func fetchRepos(for page: Int, completion: @escaping ReposListCompletion)
 }
 
 protocol RepoWebServiceProtocol {
@@ -50,8 +50,8 @@ final class GithubWebService {
     }
 }
 
-extension GithubWebService: RepoListWebServiceProtocol {
-    func fetchRepos(for page: Int, completion: @escaping RepoListCompletion) {
+extension GithubWebService: ReposListWebServiceProtocol {
+    func fetchRepos(for page: Int, completion: @escaping ReposListCompletion) {
         fetchData(for: .repoList(page: page), completion: completion)
     }
 }

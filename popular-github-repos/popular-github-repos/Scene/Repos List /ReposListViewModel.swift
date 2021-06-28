@@ -16,7 +16,7 @@ final class ReposListViewModel{
     
     // MARK: - Variables
     
-    private var webService: RepoListWebServiceProtocol
+    private var webService: ReposListWebServiceProtocol
     private var repos: [Repository] = []
     private var nextPage = 1
     private var pageCount: Int = 1
@@ -27,7 +27,7 @@ final class ReposListViewModel{
     
     // MARK: - Initialization
     
-    init(webService: RepoListWebServiceProtocol = GithubWebService()) {
+    init(webService: ReposListWebServiceProtocol = GithubWebService()) {
         self.webService = webService
     }
     
