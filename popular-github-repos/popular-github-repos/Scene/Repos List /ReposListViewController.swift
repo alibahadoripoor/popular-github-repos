@@ -44,6 +44,10 @@ final class ReposListViewController: BaseViewController {
         setupCallBacks()
         viewModel.viewDidLoad()
     }
+    
+    deinit {
+        debugPrint("deinit from ReposListViewController")
+    }
 
     // MARK: - Private Functions
     
@@ -125,6 +129,6 @@ extension ReposListViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.cellDidSelect(at: indexPath, navigationController: navigationController)
+        viewModel.cellDidSelect(at: indexPath)
     }
 }

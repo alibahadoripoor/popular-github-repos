@@ -30,8 +30,8 @@ final class DataService: DataServiceProtocol{
                 }
                 
                 guard let httpResponse = response as? HTTPURLResponse,
-                  httpResponse.hasSuccessStatusCode,
-                  let data = data else {
+                      httpResponse.hasSuccessStatusCode,
+                      let data = data else {
                     completion(Result.failure(.network(description: "failure response")))
                     return
                 }

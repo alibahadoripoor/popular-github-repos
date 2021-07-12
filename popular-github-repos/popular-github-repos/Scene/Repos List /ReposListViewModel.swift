@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit.UINavigationController
 
 enum FetchingType {
     case firstLoad, refresh, nextPage
@@ -16,6 +15,7 @@ final class ReposListViewModel{
     
     // MARK: - Variables
     
+    private var coordinator: ReposListCoordinator
     private var webService: ReposListWebServiceProtocol
     private var repos: [Repository] = []
     private var nextPage = 1
@@ -27,8 +27,13 @@ final class ReposListViewModel{
     
     // MARK: - Initialization
     
-    init(webService: ReposListWebServiceProtocol = GithubWebService()) {
+    init(coordinator: ReposListCoordinator, webService: ReposListWebServiceProtocol = GithubWebService()) {
+        self.coordinator = coordinator
         self.webService = webService
+    }
+    
+    deinit {
+        debugPrint("deinit from ReposListViewModel")
     }
     
     // MARK: - View Functions
@@ -53,10 +58,8 @@ final class ReposListViewModel{
         return RepoCellViewModel(repo: repos[indexPath.item])
     }
     
-    func cellDidSelect(at indexPath: IndexPath, navigationController: UINavigationController?){
-        let viewModel = RepoDetailsViewModel(repo: repos[indexPath.item])
-        let viewController = RepoDetailsViewController.newInstance(with: viewModel)
-        navigationController?.pushViewController(viewController, animated: true)
+    func cellDidSelect(at indexPath: IndexPath){
+        coordinator.startRepoDetailsViewController(repo: repos[indexPath.item])
     }
     
     //MARK: - Private Functions

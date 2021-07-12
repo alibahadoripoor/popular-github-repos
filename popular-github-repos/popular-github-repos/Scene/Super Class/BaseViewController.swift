@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BaseViewController: UIViewController, UINavigationControllerDelegate {
+class BaseViewController: UIViewController{
     
     // MARK: - Initialization
     

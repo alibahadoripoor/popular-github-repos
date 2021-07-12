@@ -41,6 +41,10 @@ final class RepoDetailsViewController: BaseViewController {
         viewModel.viewDidDisappear()
     }
 
+    deinit {
+        debugPrint("deinit from RepoDetailsViewController")
+    }
+    
     // MARK: - Private Functions
     
     private func setupUI(){

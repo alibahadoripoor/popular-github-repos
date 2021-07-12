@@ -11,24 +11,33 @@ final class RepoDetailsViewModel{
     
     // MARK: - Variables
     
+    private var coordinator: RepoDetailsCoordinator
     private var webService: RepoWebServiceProtocol
-    private var repo: Repository!
-    private var timer: Timer!
+    private var repo: Repository
+    private var timer: Timer?
     private var isFetchInProgress: Bool = false
     var onFetchCompleted: ()->() = {}
     var onFetchFailed: (String, String)->() = { _,_ in }
     
     // MARK: - Initialization
     
-    init(webService: RepoWebServiceProtocol = GithubWebService(), repo: Repository) {
+    init(coordinator: RepoDetailsCoordinator,
+         webService: RepoWebServiceProtocol = GithubWebService(),
+         repo: Repository) {
+        self.coordinator = coordinator
         self.webService = webService
         self.repo = repo
+    }
+    
+    deinit {
+        debugPrint("deinit from RepoDetailsViewModel")
     }
     
     // MARK: - View Functions
     
     func viewDidLoad(){
         onFetchCompleted()
+        /** We need to reftesh the page every 10 sec */
         timer = Timer.scheduledTimer(timeInterval: 10.0,
                                  target: self,
                                  selector: #selector(fetchRepo),
@@ -38,7 +47,8 @@ final class RepoDetailsViewModel{
     
     func viewDidDisappear(){
         webService.cancel()
-        timer.invalidate()
+        timer?.invalidate()
+        coordinator.finish()
     }
     
     func headerViewModel() -> RepoDetailsHeaderViewModel{
@@ -75,7 +85,6 @@ final class RepoDetailsViewModel{
                 self.onFetchCompleted()
                 self.isFetchInProgress = false
             }
-
         }
     }
 }
